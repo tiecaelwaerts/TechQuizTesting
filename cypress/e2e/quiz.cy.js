@@ -2,32 +2,31 @@ describe('User Experience', () => {
     beforeEach(() => {
         cy.visit('http://127.0.0.1:3001/');
     })
-    // Should visit the home page
-    it('A user can visit the home page', () => {
+    it('should allow a user to visit the home page', () => {
         cy.visit('http://127.0.0.1:3001/');
     });
-    // When start button is clicked, the quiz begins
-    it('A user can click the start button to begin the quiz', () => {
+
+    it('should start the quiz when the Start Quiz button is clicked', () => {
         cy.get('button').contains('Start Quiz').click();
         cy.get('h2');
     })
-    // When an answers is chosen, the next question is presented
-    it('When a user answers a question, they get another question', () => {
+
+    it('should display a new question when an answer is selected', () => {
         cy.get('button').contains('Start Quiz').click();
         cy.get('h2').as('question');
         cy.get('button').contains('1').click();
         cy.get('h2').should('not.have.text', '@question');
     })
-    // When all questions are answered, the final score appears
-    it('A user can see their score after answering every question', () => {
+
+    it('should display the user’s score after answering all questions', () => {
         cy.get('button').contains('Start Quiz').click();
         for (let i = 1; i <= 10; i++) {
             cy.get('button').contains('1').click();
         }
         cy.get('.alert-success').should('be.visible').and('contain', 'Your score');
     })
-    // When take new quiz is clicked, a new quiz begins
-    it('A user can click the Take New Quiz button to start another quiz', () => {
+    
+    it('should allow the user to start a new quiz after completion', () => {
         cy.get('button').contains('Start Quiz').click();
         for (let i = 1; i <= 10; i++) {
             cy.get('button').contains('1').click();
