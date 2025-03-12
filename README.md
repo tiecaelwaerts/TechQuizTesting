@@ -15,7 +15,7 @@ This app is strictly local, so to start things of you will need to run npm run i
 
 ## Usage
 When you go through npm run start:dev, the page will display and you can start the Quiz with the "Start Quiz" button. 
-How to use the application: https://drive.google.com/file/d/18c3xcop3Z7_4uv1FoLstRyb09tOc9-Rl/view
+How to use the application: https://drive.google.com/file/d/1cOsGsTtojc4JotEm4bfYfuq9ZadfdHIJ/view
 
 ## Collaborators 
 with coPilot, chatGPT and cohorts
